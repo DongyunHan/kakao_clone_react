@@ -1,0 +1,26 @@
+.search-bar {
+    border-bottom: 1px solid #dddddd;
+    width:100%;
+    display:table;
+    table-layout: fixed;
+
+    background-color: #ebebeb;
+    padding: 0px 1px;
+}
+
+.search-bar .bar__column{
+    display:table-cell;
+    align-content : center;
+
+    padding: 5px 5px;
+    width:20%;
+}
+
+.search-bar .bar__column:hover{
+    background:#dddddd;
+}
+
+.search-bar i {
+    color: #bbbbbb;
+    font-size: 20px;
+}
