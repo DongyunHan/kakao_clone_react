@@ -1,14 +1,17 @@
 import './header.css';
 import React, { Component } from 'react';
+import { Icon } from 'react-fa';
 
 
-export default class MainHeader extends Component{
+class MainHeader extends Component{
     render(){
         return(
+
             <header className = 'top-header'>
-                <HeaderTop />
-                <HeaderBottom />
+                    <HeaderTop />
+                    <HeaderBottom />
             </header>
+
         );
     }
 }
@@ -47,3 +50,5 @@ function HeaderBottom(){
         </div>
     );
 }
+
+export default MainHeader;

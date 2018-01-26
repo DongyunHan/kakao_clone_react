@@ -1,24 +1,35 @@
 import './body.css';
 import React, {Component} from 'react';
+import  twiceLogo  from '../images/twiceLogo.jpg';
+import  apinkLogo  from '../images/Apink.jpg';
+import { Link } from 'react-router-dom';
+import Profile from '../Profile/profile'
 
-function CallFriend({friendName, tagLine}){
+function CallFriend({friendName, tagLine, imageLogo}){
     return(
         <div className="friends__section-rows">
-            <div className="friends__section-row with-tagline">
 
-                <div className="friends__section-column">
-                    <img src={require("../images/avatar.jpg")} alt="" />
+            <Link to='/profile' params={{name:friendName, image:{imageLogo}} }>
 
-                    <span className="friends__section-name">{friendName}</span>
+                <div className="friends__section-row with-tagline">
+                    <div className="friends__section-column">
+
+                            {imageLogo?
+                                (<img src={ imageLogo } alt="" />)
+                                : (<img src={ require("../images/avatar.jpg") } alt="" />)
+                            }
+
+                        <span className="friends__section-name">{friendName}</span>
+                    </div>
+
+                    {tagLine? (
+                            <span className="friends__section-tagline">
+                                {tagLine}
+                            </span>)
+                        :null
+                    }
                 </div>
-
-                {tagLine? (
-                        <span className="friends__section-tagline">
-                            {tagLine}
-                        </span>)
-                    :null
-                }
-            </div>
+            </Link>
         </div>
     )
 }
@@ -31,20 +42,13 @@ function CallSection({sectionName}){
     );
 }
 
-function SearchBar(){
-    return(
-        <div className="search-bar">
-            <i className="fa fa-search">vzvadfsv</i>
-            <input type="text" placeholder="Find friends, chats, Plus Friends" />
-        </div>
-    );
-}
+
 
 function SectionProfile(){
     return(
         <section className="friends__section" >
             <CallSection sectionName="My Profile" />
-            <CallFriend friendName="Apink" tagLine="Apink Love"/>
+            <CallFriend friendName="Apink" tagLine="에이핑크는 사랑입니다." imageLogo = { apinkLogo }/>
         </section>
     );
 }
@@ -53,7 +57,7 @@ function SectionRecommendFriends(){
     return(
         <section className="friends__section">
             <CallSection sectionName="Recommended Friends" />
-            <CallFriend  friendName="Twice" tagLine="" />
+            <CallFriend  friendName="Twice" tagLine="" imageLogo= { twiceLogo }/>
         </section>
     );
 }
@@ -82,7 +86,7 @@ export default class MainMain extends Component{
     render(){
         return(
             <main className="friends">
-                <SearchBar />
+
                 <SectionProfile />
                 <SectionRecommendFriends />
                 <SectionGroups />

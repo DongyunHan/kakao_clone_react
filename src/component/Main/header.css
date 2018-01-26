@@ -1,11 +1,11 @@
 .top-header {
     background-color: #523737;
     color: white;
-    padding: 5px 10px 15px 10px;
-    position: fixed;
+    padding: 5px 10px 10px 10px;
+    position: static;
     width: 100%;
     top: 0;
-    z-index: 2;
+    z-index :2;
 }
 
 .top-header a {
@@ -24,7 +24,7 @@
 }
 
 .top-header .header__bottom {
-    margin: 0 10px;
+    margin: 0px 10px;
 }
 
 .top-header .header__column {
@@ -32,7 +32,7 @@
 }
 
 .top-header .header__bottom .header__column:first-child {
-    color: rgba(155, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
 }
 
@@ -47,3 +47,4 @@
 .top-header .header__number {
     color: yellow;
 }
+
